@@ -1,7 +1,22 @@
 import React from "react";
+import { useState } from "react";
 
 const Search = () => {
-  return <div>Search</div>;
+  const [search, setSearch] = useState("");
+
+  return (
+    <form onSubmit={(e) => e.preventDefault()}>
+      <label htmlFor="search"></label>
+      <input
+        type="text"
+        role="search"
+        placeholder="Search Sports"
+        value={search}
+        onChange={(e) => setSearch(e.target.value)}
+      />
+      <button type="submit">Search</button>
+    </form>
+  );
 };
 
 export default Search;
